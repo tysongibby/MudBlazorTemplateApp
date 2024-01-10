@@ -1,4 +1,7 @@
-﻿<MudNavMenu>
+﻿@implements IDisposable
+@inject NavigationManager NavigationManager
+
+<MudNavMenu>
     <MudNavLink Href="/" Match="NavLinkMatch.All">Home</MudNavLink>
     <MudNavLink Href="/counter" Match="NavLinkMatch.Prefix">Counter</MudNavLink>
     <MudNavLink Href="/weather" Match="NavLinkMatch.Prefix">Weather</MudNavLink>
@@ -7,8 +10,18 @@
     <AuthorizeView>
         <Authorized>                            
             <MudNavLink Href="account/manage" Match="NavLinkMatch.Prefix">@context.User.Identity?.Name</MudNavLink>
-            <MudNavLink Href="/security" Match="NavLinkMatch.Prefix">Security</MudNavLink>     
-            <MudNavLink Href="/account/logout" Match="NavLinkMatch.Prefix">Logout</MudNavLink>            
+            <MudNavLink Href="/security" Match="NavLinkMatch.Prefix">Security</MudNavLink>
+            <div class="nav-item px-3">
+                @* TODO: recreate this logout action *@
+                <form action="Account/Logout" method="post">
+                    <AntiforgeryToken />
+                    <input type="hidden" name="ReturnUrl" value="@currentUrl" />
+                    <button type="submit" class="nav-link">
+                        <span class="bi bi-arrow-bar-left-nav-menu" aria-hidden="true"></span> Logout
+                    </button>
+                </form>
+            </div>
+            @* <MudNavLink Href="/account/logout" Match="NavLinkMatch.Prefix">Logout</MudNavLink>    *@         
         </Authorized>
         <NotAuthorized>
             <MudNavLink Href="/account/register" Match="NavLinkMatch.Prefix">Register</MudNavLink>
@@ -17,3 +30,24 @@
     </AuthorizeView>
    
 </MudNavMenu>
+
+@code {
+    private string? currentUrl;
+
+    protected override void OnInitialized()
+    {
+        currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+
+    private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        currentUrl = NavigationManager.ToBaseRelativePath(e.Location);
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+}
