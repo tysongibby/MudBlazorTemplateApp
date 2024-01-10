@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudBlazorTemplate", "MudBla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudBlazorTemplate.Client", "MudBlazorTemplate\MudBlazorTemplate.Client\MudBlazorTemplate.Client.csproj", "{0A67C939-4F07-4777-90C5-8BD4BD3B472C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBB298AC-AADB-4370-9066-0B7961CFB50A}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
