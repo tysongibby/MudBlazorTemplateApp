@@ -3,12 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudBlazorTemplate", "MudBlazorTemplate\MudBlazorTemplate\MudBlazorTemplate.csproj", "{5BE72D19-3E71-47D3-81C0-2A572923703C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudBlazorTemplate", "MudBlazorTemplate\MudBlazorTemplate\MudBlazorTemplate.csproj", "{5BE72D19-3E71-47D3-81C0-2A572923703C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudBlazorTemplate.Client", "MudBlazorTemplate\MudBlazorTemplate.Client\MudBlazorTemplate.Client.csproj", "{0A67C939-4F07-4777-90C5-8BD4BD3B472C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudBlazorTemplate.Client", "MudBlazorTemplate\MudBlazorTemplate.Client\MudBlazorTemplate.Client.csproj", "{0A67C939-4F07-4777-90C5-8BD4BD3B472C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBB298AC-AADB-4370-9066-0B7961CFB50A}"
 	ProjectSection(SolutionItems) = preProject
+		MudBlazorTemplate.zip = MudBlazorTemplate.zip
 		README.md = README.md
 	EndProjectSection
 EndProject
