@@ -2,9 +2,18 @@
     <MudNavLink Href="/" Match="NavLinkMatch.All">Home</MudNavLink>
     <MudNavLink Href="/counter" Match="NavLinkMatch.Prefix">Counter</MudNavLink>
     <MudNavLink Href="/weather" Match="NavLinkMatch.Prefix">Weather</MudNavLink>
-    <MudNavGroup Title="Settings" Expanded="true">
-        <MudNavLink Href="/users" Match="NavLinkMatch.Prefix">Users</MudNavLink>
-        <MudNavLink Href="/security" Match="NavLinkMatch.Prefix">Security</MudNavLink>
-    </MudNavGroup>
     @* <MudNavLink Href="/about" Match="NavLinkMatch.Prefix">About</MudNavLink> *@
+    <MudNavLink Href="/auth" Match="NavLinkMatch.Prefix">Auth Required</MudNavLink>
+    <AuthorizeView>
+        <Authorized>                            
+            <MudNavLink Href="account/manage" Match="NavLinkMatch.Prefix">@context.User.Identity?.Name</MudNavLink>
+            <MudNavLink Href="/security" Match="NavLinkMatch.Prefix">Security</MudNavLink>     
+            <MudNavLink Href="/account/logout" Match="NavLinkMatch.Prefix">Logout</MudNavLink>            
+        </Authorized>
+        <NotAuthorized>
+            <MudNavLink Href="/account/register" Match="NavLinkMatch.Prefix">Register</MudNavLink>
+            <MudNavLink Href="/account/login" Match="NavLinkMatch.Prefix">Login</MudNavLink>
+        </NotAuthorized>
+    </AuthorizeView>
+   
 </MudNavMenu>
