@@ -4,3 +4,5 @@ This project was created using the steps outlined by ATEEKGIT on the [MudBlazor 
 
 It includes ASP.NET Core Identity Authorization and Authentication using the Microsoft MudBlazor Web Application project template.
 The auto-generated web forms have not yet been updated to use MudBlazor components.
+
+reference: [Multi-Project Template](https://learn.microsoft.com/en-us/visualstudio/ide/how-to-create-multi-project-templates?view=vs-2019)
