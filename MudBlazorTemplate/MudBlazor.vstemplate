@@ -1,0 +1,18 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+		<TemplateData>
+				<Name>MudBlazor for NET 8</Name>
+				<Description>MudBlazor for NET 8 Web Application with Authorization and Authentication</Description>
+				<Icon>Icon.ico</Icon>
+				<ProjectType>CSharp</ProjectType>
+		</TemplateData>
+		<TemplateContent>
+				<ProjectCollection>
+						<ProjectTemplateLink ProjectName="MudBlazor.Server">
+								MudBlazorServerTemplate\MudBlazorServer.vstemplate
+						</ProjectTemplateLink>
+						<ProjectTemplateLink ProjectName="MudBlazor.Client">
+								MudBlazorClientTemplate\MudBlazorClient.vstemplate
+						</ProjectTemplateLink>
+				</ProjectCollection>
+		</TemplateContent>
+</VSTemplate>
